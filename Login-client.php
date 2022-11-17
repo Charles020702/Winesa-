@@ -29,12 +29,32 @@
 <h2>LOGIN HERE</h2>
 <form method="post">
 <p>Username</p>
- <input type ="text" name="" placeholder="Enter Username">
+ <input type ="text" name="txtusername" placeholder="Enter Username">
 <p> Password</p>
-<input type = "password" name="" placeholder="Enter Password">
+<input type = "password" name="txtpassword" placeholder="Enter Password">
 <div class="d-grid gap-2  mx-auto">
-<button type="submit" class="btn btn-outline-secondary rounded-pill">Login</button>
+<button type="submit" name="btnlogin" class="btn btn-outline-secondary rounded-pill">Login</button>
 </div>
+
+<?php 
+    if(isset($_POST['btnlogin'])):
+    
+    $Username = $_POST['txtusername'];
+    $Password = $_POST['txtpassword'];
+
+    if(($Username == "client1")  && ($Password == "pass123")){
+        header("location:Maininterface-client.php");
+    }
+    else{
+        echo'<br><div class="alert alert-danger alert-dismissible fade show" role="alert col-4 offset-4 mt-5">
+                Invalid Username/Password.
+                <button class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                 </div>';
+    }
+?>
+
+<?php endif ?>
+
 <a href="#">Lost your password?</a><br>
 <a href="#">Don't have an account?</a>
 </form>
