@@ -1,0 +1,47 @@
+*{
+    margin:0;
+	padding:0;
+}
+.Backgroundpic{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+ul.no-bullets{
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+}
+.NavWords{
+    margin-left: 1100px;
+    list-style-type: none;
+    
+}  
+.navbar{
+    background-color:#154c79;
+}
+.NavWords a:hover{
+    background-color:#009688;
+}
+h1{
+    position: absolute;
+   padding: 3px;
+   float: left;
+   margin-left: 2%;
+   margin-top: 10px;
+   font-family: 'Alfa Slab one', cursive;   
+   color: #fff;
+   font-size:40px;
+}
+.Formfillup{
+	width: 500px;
+	height: 600px;
+	background: #fff;
+	color: #000;
+    top: 65%;
+	left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding: 15px 30px;
+}  
