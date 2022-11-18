@@ -1,5 +1,15 @@
 <?php
-    $arrMonths = array('January','February','March','April','May','June','July','August','September','October','November','December');
+   $arrMonths = array('January','February','March','April','May','June','July','August','September','October','November','December');
+
+   date_default_timezone_set('Asia/Manila');
+   $todays_date = date("y-m-d h:i:sa");
+   $today = strtotime($todays_date);
+//    echo "<br>";echo "<br>";
+//    echo "Current time ";
+//    echo "<br>";
+//    echo date(" h:iA", $today);
+   
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +32,7 @@
 <div class="container-fluid">
 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Menu
           </a>
           <ul class="dropdown-menu">
             <a class="dropdown-item" href="#">Profile</a></li>
@@ -39,7 +49,7 @@
 
 <div class="Formfillup">
 <h2 class="text-center">Online Form Reservation</h2>
-<form action="">
+<form  method="post" action="Maininterface-client-confirmation.php">
 <label for="">Month: </label><select name="drpMonths" id="" class="form-control">
 <?php
         if(isset($arrMonths)){
@@ -73,28 +83,44 @@
         ?>
 </select>
         
-        <label for="">Number of Adults: </label><input type="number" class="form-control" min="0" max="10" value="0">
-        
-        <label for="">Number of Childern: </label><input type="number" class="form-control" min="0" max="10" value="0">
+        <label for="qtyHeads">Number of Heads: </label><input type="number" name="qtyHeads" id="qtyHeads" class="form-control" min="1" max="10"  required>
+        <?php
+        ?>
         <br>
-        <input type="radio" name="radsize" id="radbig" value="Small Cottage">
+        <input type="radio" name="radsize" id="radbig" value="Small Cottage" required>
         <label for="radbig">Small Cottage</label>
-        <input type="radio" name="radsize" id="radsmall" value="Big Cottage">
+        <input type="radio" name="radsize" id="radsmall" value="Big Cottage" required>
         <label for="radsmall">Big Cottage</label>
         <br><br>
-        <label for="txtTime">Enter/Select Time From:</label>
-        <input type="time" name="txtTime" id="txtTime" placeholder="">
+        <label for="txtTimeF">Enter/Select Time From:</label>
+        <input type="time" name="txtTimeF" id="txtTimeF" class="" placeholder="" value="<?php echo date("h:i A");?>" required>
         <br><br>
-        <label for="txtTime">Enter/Select Time To:</label>
-        <input type="time" name="txtTime" id="txtTime" placeholder="">
+        <label for="txtTimeT">Enter/Select Time To:</label>
+        <input type="time" name="txtTimeT" id="txtTimeT" placeholder="" value="" required>
         <br><br>
         <div class="d-grid gap-2">
-        <button type="button" class="btn btn-outline-secondary">Process</button>
+        <button type="submit" name="btnProcess" class="btn btn-outline-secondary">Process</button>
         </div>
 
+
+<?php  
+ if(isset($_POST['btnProcess'])):
+    $quantityheads = $_POST['qtyHeads'];
+    $RCsize = $_POST['radsize'];
+   
+    if($RCsize == "Small Cottage"){
+     $Cprice = 500;
+    }
+    elseif($RCsize == "Big Cottage"){
+     $Cprice = 1000; 
+    }
+
+    $totalofHeadsPrice = $quantityheads * 100;
+
+?>
+<?php endif ?>
 </form>
-</div>
-    
+</div> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
