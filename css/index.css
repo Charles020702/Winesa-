@@ -9,6 +9,7 @@
 }
 .NavWords{
     margin-left: 1010px;
+	list-style-type: none;
 }  
 .navbar{
     background-color:#154c79;
@@ -77,3 +78,4 @@ button:hover span{
 button:hover{
 	border:none;
 }
+

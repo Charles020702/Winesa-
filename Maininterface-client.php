@@ -1,15 +1,25 @@
 <?php
+  session_start();
+  require_once('dataset.php');
+
    $arrMonths = array('January','February','March','April','May','June','July','August','September','October','November','December');
 
    date_default_timezone_set('Asia/Manila');
-   $todays_date = date("y-m-d h:i:sa");
-   $today = strtotime($todays_date);
+   $todays_date = date("h:i:sa");
+
+ 
+   
 //    echo "<br>";echo "<br>";
 //    echo "Current time ";
 //    echo "<br>";
 //    echo date(" h:iA", $today);
-   
 
+if(isset($_POST['btnProcess'])){
+$_SESSION['TotalQtyP'] = $_POST['qtyheads'] * 100;
+$_POST['radsize'];
+
+echo $_SESSION['TotalQtyP'];
+}    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,13 +93,13 @@
         ?>
 </select>
         
-        <label for="qtyHeads">Number of Heads: </label><input type="number" name="qtyHeads" id="qtyHeads" class="form-control" min="1" max="10"  required>
+        <label for="qtyHeads">Number of Heads: </label><input type="number" name="qtyHeads" id="qtyHeads" class="form-control" min="1" max="10" value="<?php echo $totalofHeadsPrice?>"  required>
         <?php
         ?>
         <br>
-        <input type="radio" name="radsize" id="radbig" value="Small Cottage" required>
+        <input type="radio" name="radsize" id="radbig" value="Small Cottage ₱<?php // echo number_format($arrPrices[0]['Price1'], 2); ?>" required>
         <label for="radbig">Small Cottage</label>
-        <input type="radio" name="radsize" id="radsmall" value="Big Cottage" required>
+        <input type="radio" name="radsize" id="radsmall" value="Big Cottage ₱<?php // echo number_format($arrPrices[0]['Price2'], 2); ?>" required>
         <label for="radsmall">Big Cottage</label>
         <br><br>
         <label for="txtTimeF">Enter/Select Time From:</label>
@@ -104,21 +114,22 @@
 
 
 <?php  
- if(isset($_POST['btnProcess'])):
-    $quantityheads = $_POST['qtyHeads'];
-    $RCsize = $_POST['radsize'];
+//  if(isset($_POST['btnProcess'])):
+//     $quantityheads = $_POST['qtyHeads'];
+//     $RCsize = $_POST['radsize'];
+//     $DrpMonths = $_POST['drpMonths'];
+//     // $DrpDays = $_POST['drpMonths']
+//     // $DrpDays = $_POST['drpMonths']
    
-    if($RCsize == "Small Cottage"){
-     $Cprice = 500;
-    }
-    elseif($RCsize == "Big Cottage"){
-     $Cprice = 1000; 
-    }
-
-    $totalofHeadsPrice = $quantityheads * 100;
-
+//     if($RCsize == "Small Cottage"){
+//      $Cprice = 500;
+//     }
+//     elseif($RCsize == "Big Cottage"){
+//      $Cprice = 1000; 
+//     }
+//     $totalofHeadsPrice = $quantityheads * 100;
 ?>
-<?php endif ?>
+<?php// endif ?>
 </form>
 </div> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

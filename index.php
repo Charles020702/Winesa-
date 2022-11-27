@@ -12,15 +12,18 @@
     <title>Winesa Reservation System</title>
 </head>
 <body background = "img/Light blue.jpg" class="Backgroundpic">
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg ">
 <h1>Winesa Farm Resort</h1>
 <div class="NavWords">
 <div class="container-fluid">
+    
+    
     <a class="navbar-brand text-white" href="index.php">Home</a>
     <a class="navbar-brand text-white" href="LoginAs.php">Login</a>
     <a class="navbar-brand text-white" href="SignupAs.php">Sign up</a>
-        </li>
-        </div>
+       
+    
+       
     </div>
   </div>
 </nav>

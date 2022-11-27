@@ -1,3 +1,10 @@
+<?php
+  //  date_default_timezone_set('Asia/Manila');
+  //  $todays_date = date("h:i:sa");
+  session_start();
+  require_once('dataset.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,8 +41,27 @@
 </nav>
 
 <div class="Formfillup">
-<h2 class="text-center">Online Form Reservation</h2>
+<h2 class="text-center">Confirmation Form</h2>
+<hr>
 <form method = "post">
+<?php
+  echo '<b> Date: '.$_POST['drpMonths'].", ".$_POST['drpDays']." ".$_POST['drpYear'] .'</b>';
+  echo '<br> <b> Number of Person: '.$_POST['qtyHeads']." ₱ ".$result1 = $_POST['qtyHeads'] * $arrPrices[0]['Price3'].'</b>';
+  echo '<br> <b> Size of Cottage: '.$_POST['radsize'].'</b>';
+  if($_POST['radsize'] == "Small Cottage ₱"){
+    echo '<b> '. $arrPrices[0]['Price1']. '</b>';
+  }
+  elseif($_POST['radsize'] == "Big Cottage ₱"){
+    echo '<b> '. $arrPrices[0]['Price2']. '</b>';
+  }
+  $TimeF = $_POST['txtTimeF'];
+  echo '<br> <b> Time of in: '.date("h:i A", strtotime($TimeF)).'</b>';
+  $TimeT = $_POST['txtTimeT'];
+  echo '<br> <b> Time of out: '.date("h:i A", strtotime($TimeT)).'</b>';
+  $result2 = $_POST['radsize'];
+  $Total = (int)$result1 + (int)$result2;
+  echo '<br> <b> The Total of Payment '. $Total .'</b>';
+?>
 </form>
 </div> 
     

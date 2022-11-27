@@ -38,10 +38,8 @@ h1{
 	height: 450px;
 	background: #fff;
 	color: #000;
-    top: 65%;
-	left: 50%;
+    margin-top:  50px;
+    margin-left: 290px;
     position: absolute;
-    transform: translate(-50%,-50%);
-	box-sizing: border-box;
 	padding: 15px 30px;
 }  
