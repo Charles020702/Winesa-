@@ -1,0 +1,29 @@
+*{
+    margin:0;
+	padding:0;
+}
+.Backgroundpic{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.NavWords{
+    margin-left: 1010px;
+	list-style-type: none;
+}  
+.navbar{
+    background-color:#154c79;
+}
+.NavWords a:hover{
+    background-color:#009688;
+}  
+h1{
+    position: absolute;
+   padding: 3px;
+   float: left;
+   margin-left: 2%;
+   margin-top: 10px;
+   font-family: 'Alfa Slab one', cursive;   
+   color: #fff;
+   font-size:40px;
+}

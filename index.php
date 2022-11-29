@@ -34,7 +34,7 @@
 <p>Winesa farm resort is located at Purok 3, Aranguren Capas Tarlac, Briones Residence.<br>
 LANDMARK: WAITING SHED BAGO SIMBAHAN NG ARANGUREN<br>
 Opens 9:00AM to 9:00PM.</p>
-<button type = "button"><span></span>About us</button>
+<a href="Aboutus.php"><button type = "button"><span></span>About us</button></a>
 <button type = "button"><span></span>Contact us</button>
 </ul>	
 </div>
