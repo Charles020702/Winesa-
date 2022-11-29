@@ -97,9 +97,9 @@ echo $_SESSION['TotalQtyP'];
         <?php
         ?>
         <br>
-        <input type="radio" name="radsize" id="radbig" value="Small Cottage ₱<?php // echo number_format($arrPrices[0]['Price1'], 2); ?>" required>
+        <input type="radio" name="radsize" id="radbig" value="500" required>
         <label for="radbig">Small Cottage</label>
-        <input type="radio" name="radsize" id="radsmall" value="Big Cottage ₱<?php // echo number_format($arrPrices[0]['Price2'], 2); ?>" required>
+        <input type="radio" name="radsize" id="radsmall" value="1000" required>
         <label for="radsmall">Big Cottage</label>
         <br><br>
         <label for="txtTimeF">Enter/Select Time From:</label>
@@ -111,25 +111,6 @@ echo $_SESSION['TotalQtyP'];
         <div class="d-grid gap-2">
         <button type="submit" name="btnProcess" class="btn btn-outline-secondary">Process</button>
         </div>
-
-
-<?php  
-//  if(isset($_POST['btnProcess'])):
-//     $quantityheads = $_POST['qtyHeads'];
-//     $RCsize = $_POST['radsize'];
-//     $DrpMonths = $_POST['drpMonths'];
-//     // $DrpDays = $_POST['drpMonths']
-//     // $DrpDays = $_POST['drpMonths']
-   
-//     if($RCsize == "Small Cottage"){
-//      $Cprice = 500;
-//     }
-//     elseif($RCsize == "Big Cottage"){
-//      $Cprice = 1000; 
-//     }
-//     $totalofHeadsPrice = $quantityheads * 100;
-?>
-<?php// endif ?>
 </form>
 </div> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

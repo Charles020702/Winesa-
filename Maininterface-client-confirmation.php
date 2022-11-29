@@ -46,13 +46,15 @@
 <form method = "post">
 <?php
   echo '<b> Date: '.$_POST['drpMonths'].", ".$_POST['drpDays']." ".$_POST['drpYear'] .'</b>';
-  echo '<br> <b> Number of Person: '.$_POST['qtyHeads']." ₱ ".$result1 = $_POST['qtyHeads'] * $arrPrices[0]['Price3'].'</b>';
-  echo '<br> <b> Size of Cottage: '.$_POST['radsize'].'</b>';
-  if($_POST['radsize'] == "Small Cottage ₱"){
-    echo '<b> '. $arrPrices[0]['Price1']. '</b>';
+  $result1 = $_POST['qtyHeads'] * $arrPrices[0]['Price3'];
+  echo '<br> <b> Number of Person: '.$_POST['qtyHeads']." ₱ ".number_format($result1,2).'</b>';
+  
+  $_POST['radsize'];
+  if($_POST['radsize'] == "500"){
+    echo '<br><b> Size of Cottage: Small Cottage ₱ '.number_format($_POST['radsize'],2).'</b>';
   }
-  elseif($_POST['radsize'] == "Big Cottage ₱"){
-    echo '<b> '. $arrPrices[0]['Price2']. '</b>';
+  elseif($_POST['radsize'] == "1000"){
+    echo '<br><b>Size of Cottage: Big Cottage ₱ '.number_format($_POST['radsize'],2).'</b>';
   }
   $TimeF = $_POST['txtTimeF'];
   echo '<br> <b> Time of in: '.date("h:i A", strtotime($TimeF)).'</b>';
@@ -60,8 +62,10 @@
   echo '<br> <b> Time of out: '.date("h:i A", strtotime($TimeT)).'</b>';
   $result2 = $_POST['radsize'];
   $Total = (int)$result1 + (int)$result2;
-  echo '<br> <b> The Total of Payment '. $Total .'</b>';
+  echo '<br> <h4><b> The Total of Payment ₱ '.  number_format($Total,2) .'</b></h4>';
 ?>
+<a href="Maininterface-client.php"><button type="button" class="btn btn-outline-danger ">Cancel Go Back</button></a>
+<a href="Confirm-Success.php"><button type="button" name="btnConfirm" class="btn btn-outline-success">Confirm</button></a>
 </form>
 </div> 
     
