@@ -93,7 +93,7 @@ echo $_SESSION['TotalQtyP'];
         ?>
 </select>
         
-        <label for="qtyHeads">Number of Heads: </label><input type="number" name="qtyHeads" id="qtyHeads" class="form-control" min="1" max="10" value="<?php echo $totalofHeadsPrice?>"  required>
+        <label for="qtyHeads">Number of Heads: </label><input type="number" name="qtyHeads" id="qtyHeads" class="form-control" min="1" max="20" value="<?php echo $totalofHeadsPrice?>"  required>
         <?php
         ?>
         <br>
